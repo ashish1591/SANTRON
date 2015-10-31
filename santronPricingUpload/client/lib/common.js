@@ -41,7 +41,6 @@ getUniqueProductList=function(){
             filtered_subcategories.push(key1);
             })
             var keyName=key.replace(/\s/g, '');
-            // keyName=keyName.replace('/', '#');
             keyName=keyName.replace('&','');
             uniqueProductList.push({keyName:keyName,maincategory:key,subcategories:filtered_subcategories})
         }

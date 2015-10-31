@@ -12,10 +12,7 @@ jquery
 ground:db
 mrt:bootstrap-3
 momentjs:moment
-tsega:bootstrap3-datetimepicker
 chrismbeckett:toastr
-richsilv:cordova-notifications
-percolate:synced-cron
 cfs:filesystem
 cfs:standard-packages
 cfs:gridfs
@@ -25,3 +22,14 @@ netanelgilad:excel
 autopublish
 insecure
 emdagon:bootstrap-multiselect
+
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code

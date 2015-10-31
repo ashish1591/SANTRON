@@ -1,8 +1,8 @@
 Meteor.methods({
    	exceleread : function(){
-   		console.log("CALLED");	
+   		// Items.find().forEach(function(data){ Items.remove({_id:data._id})})
       	var excel = new Excel('xls');
-      	var workbook = excel.readFile('/home/ark/Downloads/Santron Product File.xls');
+      	var workbook = excel.readFile('/home/blueoort-1/Downloads/Santron Product File.xls');
       	var yourSheetsName = workbook.SheetNames;
       	var res = excel.utils.sheet_to_json(workbook.Sheets[yourSheetsName[0]]);
 
@@ -12,7 +12,6 @@ Meteor.methods({
 	        {
 	            if(res[i]["Cost price"] && res[i]["Santron Price"])
 	            {
-	            	// var chkExist=Categories.findOne({maincategory:})
 	            	var oldData=Items.findOne({
 	            		itemName           : res[i]["Item Name (required)"],
 						itemNumber         : res[i]["Item Number"],
@@ -40,7 +39,7 @@ Meteor.methods({
 		                	}
 		                	else
 		                	{
-		                		// console.log(res[i]["No"])
+		                		console.log(res[i]["No"]);
 		                	}
 		                })
 	                }
@@ -50,8 +49,7 @@ Meteor.methods({
 	                		lastUpdateTime     : moment().valueOf(),
 		                    productDescription : res[i]["Product Description"],
 		                    productPrice       : res[i]["Santron Price"],
-	                	}})
-	                	// console.log(i+1)
+	                	}});
 	                }
 	            }
 	        }

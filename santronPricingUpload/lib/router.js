@@ -1,9 +1,5 @@
 
 Router.onBeforeAction(function(){
-	if(!Meteor.user())
-	{
-			Router.go('/')
-	}
 },
 {except: ['login_signInTemplate'] });
 
