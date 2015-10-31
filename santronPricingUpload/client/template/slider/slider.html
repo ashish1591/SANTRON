@@ -1,0 +1,48 @@
+<template name="slider">
+
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		<div class="titleClick">
+			<span id="appName">{{getApplicationName}}</span>
+		</div>
+
+		<!-- <div style="border-bottom: 1px solid #CDCDCD;padding:10px;">
+			<div style="text-align:center;">
+				{{#if userProfilePic}}
+					{{#each userProfilePic}}
+						<img src="{{this.url}}" class="img-circle" title="" width="100px" height="100px"/>
+					{{/each}}
+				{{else}}
+					<img src="/userIcon.png" class="img-circle" title=""/>
+				{{/if}}
+			</div>
+			{{>profile_name_emaiId}}
+		</div> -->
+		
+		<!-- <a href="" class="logout" style="text-align:center;color:#DA0C0C !important;">Logout</a> -->
+		<div id="menu">
+			<div class="panel list-group">
+				<a href="#" class="list-group-item logout">
+					LOGOUT
+					<span class="fa fa-power-off pull-right"></span>
+				</a>
+
+				{{#each getUniqueProucts}}
+					<a href="#" class="list-group-item mainCategoryBtn" data-toggle="collapse" data-target="#{{keyName}}" data-parent="#menu" style="font-size:18px;">
+						{{maincategory}}
+						<i class="fa fa-angle-down pull-right"></i>
+					</a>
+					
+					<div id="{{keyName}}" class="sublinks collapse" style="font-family: 'Handlee', cursive; !important;border-bottom:1px solid #ccc;">
+					 	{{#each subcategories}}
+					  		<a class="list-group-item small subCategoryBtn" subcategory="{{this}}" category="{{../maincategory}}">
+					  			<!-- <span class="fa fa-angle-right"></span>  -->
+					  			  {{this}}
+					  		</a>
+					  	{{/each}}
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</nav>
+
+</template>

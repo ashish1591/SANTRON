@@ -1,0 +1,61 @@
+<template name="productDetails">
+	<!-- {{getAllProducts}} -->
+	<div class="container" >
+	{{#with getFilterComponents}}
+		<div class="row" style="border:2px solid orange; padding:5px">
+			{{#each companies}}
+				<div class="checkbox col-md-2">
+				  <label>
+				    <input type="checkbox" value="{{this}}" class="checkboxList">
+				    {{this}}
+				  </label>
+				</div>
+			{{/each}}
+				<button class="btn btn-primary" id="filter">Filter</button>
+		</div>
+    {{/with}}
+	    <div class="row style_featured">
+			{{#each getAllProducts}}
+		        <div class="col-md-4">
+		            <div>
+		                <img src="https://www.prepbootstrap.com/Content/images/template/featureditems/product_001.jpg" alt="" class="img-rounded img-thumbnail" />
+		                <h2>{{itemName}}</h2>
+		                <p style="text-align: left;">
+		                    <span class="fa fa-info-circle"></span>
+		                    {{productTitle}}
+		                </p>
+		                <p style="text-align: left;">
+		                    <span class="fa fa-bank "></span>
+		                    {{productDescription}}
+		                </p>
+		                <p style="text-align: left;">
+		                    <span class="fa fa-calendar "></span>
+		                    {{productPrice}}
+		                </p>
+		                <a href="#" class="btn btn-success" title="More">more »</a>
+		            </div>
+		        </div>
+			{{/each}}
+	    </div>
+	</div>
+
+<style>
+	.style_featured{
+	    padding: 20px 0;
+	    text-align: center;
+	}
+	.style_featured > div > div{
+	    padding: 10px;
+	    border: 1px solid transparent;
+	    border-radius: 4px;
+	    transition: 0.5s;
+	}
+	.style_featured > div:hover > div{
+	    margin-top: +19px;
+	    border: 1px solid rgb(153, 200, 250);
+	    box-shadow: rgba(0, 0, 0, 0.1) 0px 9px 9px 9px;
+	    background: rgba(153, 200, 250, 0.1);
+	    transition: 0.99s;
+	}
+</style>
+</template>

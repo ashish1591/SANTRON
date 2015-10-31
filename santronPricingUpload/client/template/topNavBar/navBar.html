@@ -1,0 +1,42 @@
+<template name="navBar">
+    <div class="navbarStyle" id="fixed-top">
+        <!-- {{#if getToggleSearchValue}} -->
+            {{> nav}}
+        <!-- {{else}}
+            {{> searchPanel}}
+        {{/if}} -->
+
+    </div>
+    <br /><br /><br />
+
+</template>
+
+<template name="nav">
+    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+        <!-- {{#if isOnPhone}} -->
+            <button id="showLeft" class="btn btn-lg fa fa-bars fa-2x transparentButton"></button>
+        <!-- {{/if}} -->
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10 navbarTitle">
+       {{getApplicationName}}
+    </div>
+    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+       <!--  {{#if isOnPhone}}
+            <button type="button" class="btn fa fa-search transparentButton searchClick" style="float:right;font-size:20px;line-height:30px;"></button>
+        {{else}}
+            {{>profileMenu}}
+        {{/if}} -->
+    </div>
+</template>
+
+<template name="searchPanel">
+    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+        <button type="button" class="btn fa fa-angle-left fa-2x transparentButton backFromSearch" style="float:left;font-size:30px;line-height:30px;"></button>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
+        <input type="text" id="txtSearchBox" name="txtSearchBox" placeholder="Search text" class="form-control" required autofocus>
+    </div>
+    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+        <button type="button" class="transparentButton clearSearchSession" style="float:right;font-size:30px;line-height:30px;">×</button>
+    </div>
+</template>

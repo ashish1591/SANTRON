@@ -1,0 +1,26 @@
+<template name="login_signInTemplate">
+    <div class="loginBackgroundStyle">
+        <div id="infoTemplate" style="border-bottom:2px solid #565656;text-align:center;color:#444444;font-size: 18px;margin-top:20px;">
+                Share Your Todos
+                <center>
+                    <br />
+                    <img alt="Image not set" height="imageHeight" src="/icon-96x96.png">
+                </center>
+        </div>
+        <div id="loginTemplate">
+        	{{#if loginTemplate}}
+                {{> Login}}
+            {{/if}}
+
+            {{#if registerTemplate}}
+                {{> Register}}
+            {{/if}}
+
+            {{#if forgotPwTemplate}}
+                {{> ForgotPassword}}
+            {{/if}}
+        </div>
+    </div>
+
+    <!-- {{> ResetPassword}} -->
+</template>
