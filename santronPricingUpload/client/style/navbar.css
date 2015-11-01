@@ -9,7 +9,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
-    font-family: 'Kaushan Script', cursive;
+	font-family: 'Raleway', sans-serif;
 }
 
 .navbarStyle{
@@ -57,7 +57,7 @@
 	height: 58px;
 	padding: 15px 0 0 5px;
 	text-align: center;
-	font-family: 'Kaushan Script', cursive;
+	font-family: 'Raleway', sans-serif;
 }
 
 .cbp-spmenu  #appName{

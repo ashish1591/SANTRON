@@ -1,9 +1,5 @@
 
 Router.onBeforeAction(function(){
-	if(!Meteor.user())
-	{
-			Router.go('/')
-	}
 },
 {except: ['login_signInTemplate'] });
 
@@ -26,6 +22,13 @@ Router.configure({
 	        action: function() 
 	        {
 				this.render('home');
+		    }
+		});
+ 		this.route('/admin', {
+	        path: '/admin',
+	        action: function() 
+	        {
+				this.render('adminPanel');
 		    }
 		});
 

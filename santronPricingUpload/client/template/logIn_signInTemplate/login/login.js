@@ -63,7 +63,7 @@ Template.Login.events({
 				
 				// subscribeAll();
 				
-				Router.go('/');
+				Router.go('/admin');
 			}
 		});
 		return false; 
