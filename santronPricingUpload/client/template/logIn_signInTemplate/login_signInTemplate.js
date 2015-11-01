@@ -1,7 +1,7 @@
 var setHeight=function(){
-	// var halfHeight=$( window ).height()/2;
-	// $('#infoTemplate').css('height', halfHeight+'px');
-	// $('#imageHeight').css('height', (halfHeight-20)+'px','width',(halfHeight-20)+'px');
+	var halfHeight=$( window ).height()/2;
+	$('#infoTemplate').css('height', halfHeight+'px');
+	$('#imageHeight').css('height', (halfHeight-20)+'px','width',(halfHeight-20)+'px');
 }
 
 Template.login_signInTemplate.rendered=function(){
@@ -9,11 +9,11 @@ Template.login_signInTemplate.rendered=function(){
   	Session.set("registerTemplate",false);
   	Session.set("forgotPwTemplate",false);
 
-  	setHeight();
+ //  	setHeight();
 
-	$( window ).resize(function() {
-	  setHeight();
-	});
+	// $( window ).resize(function() {
+	//   setHeight();
+	// });
 
 }
 

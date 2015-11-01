@@ -1,4 +1,9 @@
 resetActive=function(event, percent, step) {
+    if(event === undefined)
+    {
+        return;
+    }
+
     $(".progress-bar").css("width", percent + "%").attr("aria-valuenow", percent);
     $(".progress-completed").text(percent + "%");
 
@@ -38,3 +43,19 @@ Template.adminPanel.rendered=function(){
 	showCurrentStepInfo();
 
 }
+
+Template.adminPanel.events({
+    'click .upload' : function(e){
+        Meteor.call('exceleread', function(err,res){
+            if(err)
+            {
+              console.log(err.message)
+            }   
+            else
+            {
+                console.log("record inserted succesfully")
+            }
+        });
+          
+    }
+})
