@@ -1,6 +1,11 @@
 Template.productDetails.rendered=function(){
 	// $('#example-getting-started').multiselect();
 	Session.set("SELECTED_BRANDS",'');
+
+
+	
+
+
 };
 Template.productDetails.helpers({
 	getAllProducts:function(){
@@ -39,7 +44,8 @@ Template.productDetails.helpers({
         var minPrice=_.min(items, function(items){ return items.productPrice; });
 
         return {companies:companiesList,min:minPrice.productPrice,max:maxPrice.productPrice};
-	}
+	},
+	
 });
 
 Template.productDetails.events({

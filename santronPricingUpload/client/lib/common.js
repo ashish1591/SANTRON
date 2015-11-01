@@ -6,7 +6,7 @@ toggleNavBar = function(){
     var showLeft = document.getElementById( 'showLeft' );
     var body = document.getElementById( 'bodyDIV' );
 
-    if( showLeft === null && menuLeft === null)
+    if( showLeft === null || menuLeft === null)
     { 
         return ;
     };

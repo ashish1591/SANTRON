@@ -3,7 +3,6 @@
 
 .navbarTitle{
     padding: 9px 10px 15px 10px!important;
-    text-align : center; 
     font-size:20px; 
     white-space: nowrap;
     overflow: hidden;
@@ -13,13 +12,12 @@
 }
 
 .navbarStyle{
-    text-align: center;
     z-index:1;
-    background-color: #073355; 
+    line-height: 1.428571429;
+    background-color: #e25d29; 
     color:white;
     position :fixed;
     width: 100%;
-    padding: 5px 0px 0px 0px !important;
     box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
     -moz-box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
     -webkit-box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
@@ -50,7 +48,7 @@
 }
 
 .cbp-spmenu .titleClick{
-	background: #073355 !important;
+	background: #e25d29 !important;
 	color: #fff;
 	display: block;
 	cursor: pointer;
@@ -138,7 +136,7 @@
 }
 
 .cbp-spmenu a:hover {
-	background: #DADEE1;
+	background: #F7D4C6;
 }
 
 /*.cbp-spmenu a:active {

@@ -1,12 +1,26 @@
 <template name='home'>
                 
-<!--     {{#if currentUser}}
-    	<button class="upload">Upload</button>
-    	{{>insertDataManually}}
-    	{{>table}}
-    {{else}}
-        {{>login_signInTemplate}}
-    {{/if}} -->
+	<div id="fdw">
+		<nav>
+			<ul>
+				{{#each getUniqueProucts}}
+				<li>
+					<a href="">
+						{{maincategory}}
+						<i class="fa fa-angle-down" style="margin-left:3px;"></i>
+					</a>
+					<ul style="display: none;" class="sub_menu">
+						{{#each subcategories}}
+							<li>
+								<a href="" class="subCategoryBtn" subcategory="{{this}}" category="{{../maincategory}}">{{this}}</a>
+							</li>
+						{{/each}}
+					</ul>
+				</li>
+				{{/each}}
+			</ul>
+		</nav>
+	</div><!-- end fdw -->
 
 </template>
 

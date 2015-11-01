@@ -24,6 +24,7 @@ Router.configure({
 				this.render('home');
 		    }
 		});
+		
  		this.route('/admin', {
 	        path: '/admin',
 	        action: function() 
