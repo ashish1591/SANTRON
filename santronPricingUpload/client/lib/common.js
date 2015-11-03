@@ -30,7 +30,7 @@ toggleNavBar = function(){
 
 };
 getUniqueProductList=function(){
-    var allItems=Items.find().fetch();
+    var allItems=Items1.find().fetch();
     var uniqueProductList=[]
     var mainCategory=_.groupBy(allItems,'itemMainCategory')
     _.each(mainCategory, function(value, key) {

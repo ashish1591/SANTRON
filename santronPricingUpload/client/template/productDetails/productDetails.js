@@ -15,11 +15,11 @@ Template.productDetails.helpers({
 		var selectedProductItems=Session.get("SELECTED_BRANDS")
 		if(selectedProductItems)
 		{
-			var result=Items.find({itemMainCategory:category,itemSubCategory:subcategory,productTitle:{$in:selectedProductItems}}).fetch();
+			var result=Items1.find({itemMainCategory:category,itemSubCategory:subcategory,productTitle:{$in:selectedProductItems}}).fetch();
 		}
 		else
 		{
-			var result=Items.find({itemMainCategory:category,itemSubCategory:subcategory}).fetch();
+			var result=Items1.find({itemMainCategory:category,itemSubCategory:subcategory}).fetch();
 		}
 		if(result)
 		{
@@ -33,7 +33,7 @@ Template.productDetails.helpers({
 		var category=Router.current().params.category;
 		var subcategory=Router.current().params.subcategory;
 		subcategory=subcategory.replace('#','/')
-		var items=Items.find({itemMainCategory:category,itemSubCategory:subcategory}).fetch();
+		var items=Items1.find({itemMainCategory:category,itemSubCategory:subcategory}).fetch();
 		var result=_.groupBy(items,'productTitle');
 		var companiesList=[];
 		_.each(result,function(value1,key1){

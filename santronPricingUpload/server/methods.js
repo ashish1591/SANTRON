@@ -2,7 +2,7 @@ Meteor.methods({
    	exceleread : function(){
    		// Items.find().forEach(function(data){ Items.remove({_id:data._id})})
       	var excel = new Excel('xls');
-      	var workbook = excel.readFile('/home/pimpu/Downloads/Santron Product File.xls');
+      	var workbook = excel.readFile('/home/ark/Downloads/Santron Product File.xls');
       	var yourSheetsName = workbook.SheetNames;
       	var res = excel.utils.sheet_to_json(workbook.Sheets[yourSheetsName[0]]);
       	if(res.length > 0)
@@ -11,7 +11,7 @@ Meteor.methods({
 	        {
 	            if(res[i]["Cost price"] && res[i]["Santron Price"])
 	            {
-	            	var oldData=Items.findOne({
+	            	var oldData=Items1.findOne({
 	            		itemName           : res[i]["Item Name (required)"],
 						itemNumber         : res[i]["Item Number"],
 						itemMainCategory   : res[i]["Main Category"],
@@ -22,7 +22,7 @@ Meteor.methods({
 
 	                if( oldData === undefined )
 	                {
-		                Items.insert({
+		                Items1.insert({
 		                    lastUpdateTime     : moment().valueOf(),
 		                    creationTime       : moment().valueOf(),
 		                    itemName           : res[i]["Item Name (required)"],
@@ -43,7 +43,7 @@ Meteor.methods({
 	                }
 	                else if(oldData)
 	                {
-	                	Items.update( oldData._id,{$set:{
+	                	Items1.update( oldData._id,{$set:{
 	                		lastUpdateTime     : moment().valueOf(),
 		                    productDescription : res[i]["Product Description"],
 		                    productPrice       : res[i]["Santron Price"],
