@@ -59,6 +59,10 @@ Template.nav.events({
 		// $('#overDivCSSWhenSearchOnMobile').fadeIn();
 		Session.set(TOGGLE_SEARCH_PANEL,false);
 	},
+	'click .logout':function(){
+		Meteor.logout();
+		Router.go('/');
+	},
 })
 
 Template.searchPanel.rendered=function(){

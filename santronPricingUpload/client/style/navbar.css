@@ -11,6 +11,17 @@
 	font-family: 'Raleway', sans-serif;
 }
 
+.logout{
+	padding: 9px 10px 15px 10px!important;
+    font-size:17px; 
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+	font-family: 'Raleway', sans-serif;
+}
+
 .navbarStyle{
     z-index:1;
     line-height: 1.428571429;

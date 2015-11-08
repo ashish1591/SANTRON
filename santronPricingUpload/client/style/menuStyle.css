@@ -30,9 +30,8 @@ nav ul li {
 nav ul li:hover {
 	background: #fff;
 	border-radius: 5px 5px 0px 0px;
--moz-border-radius: 5px 5px 0px 0px;
--webkit-border-radius: 5px 5px 0px 0px;
-border: 0px solid #000000;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
 }
 
 nav ul li:hover a {
@@ -70,6 +69,7 @@ nav ul ul li a {
 	white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
 }	
 
 nav ul ul li a:hover {
