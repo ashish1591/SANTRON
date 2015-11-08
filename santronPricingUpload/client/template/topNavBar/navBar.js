@@ -9,6 +9,9 @@ Template.navBar.helpers({
 		return Session.get(TOGGLE_SEARCH_PANEL);
 	},
 
+	isOnPhone:function(){
+		return Meteor.isCordova;
+	},
 })
 
 Template.navBar.events({

@@ -2,7 +2,7 @@ Meteor.methods({
    	exceleread : function(){
    		// Items.find().forEach(function(data){ Items.remove({_id:data._id})})
       	var excel = new Excel('xls');
-      	var workbook = excel.readFile('/home/ark/Downloads/Santron Product File.xls');
+      	var workbook = excel.readFile('/home/pimpu/Downloads/Santron Product File.xls');
       	var yourSheetsName = workbook.SheetNames;
       	var res = excel.utils.sheet_to_json(workbook.Sheets[yourSheetsName[0]]);
       	if(res.length > 0)
