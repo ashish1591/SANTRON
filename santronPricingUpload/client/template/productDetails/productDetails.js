@@ -13,7 +13,7 @@ Template.productDetails.helpers({
 		var subcategory=Router.current().params.subcategory;
 		subcategory=subcategory.replace('#','/')
 		var selectedProductItems=Session.get("SELECTED_BRANDS")
-		if(selectedProductItems)
+		if(selectedProductItems && selectedProductItems.length>0)
 		{
 			var result=Items1.find({itemMainCategory:category,itemSubCategory:subcategory,productTitle:{$in:selectedProductItems}}).fetch();
 		}
