@@ -1,0 +1,43 @@
+<template name="productDetails">
+
+	{{#with getFilterComponents}}
+		<div class="row productCompany" style="text-align:center;z-index:1;position :fixed;width: 100%;background:#be481a;">
+			<ul>	
+				{{#each companies}}
+					<li>
+						<div class="checkbox">
+						  <label>
+						    <input type="checkbox" value="{{this}}" class="checkboxList" id="filter">
+						    {{this}}
+						  </label>
+						</div>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+    {{/with}}
+
+    <div class="row style_featured">
+		{{#each getAllProducts}}
+	        <div class="col-md-4">
+	            <div>
+	                <img src="https://www.prepbootstrap.com/Content/images/template/featureditems/product_001.jpg" alt="" class="img-rounded img-thumbnail" />
+	                <h2>{{itemName}}</h2>
+	                <p style="text-align: left;">
+	                    <span class="fa fa-info-circle"></span>
+	                    {{productTitle}}
+	                </p>
+	                <p style="text-align: left;">
+	                    <span class="fa fa-bank "></span>
+	                    {{productDescription}}
+	                </p>
+	                <p style="text-align: left;">
+	                    <span class="fa fa-calendar "></span>
+	                    {{productPrice}}
+	                </p>
+	                <a href="#" class="btn btn-success" title="More">more »</a>
+	            </div>
+	        </div>
+		{{/each}}
+    </div>
+</template>

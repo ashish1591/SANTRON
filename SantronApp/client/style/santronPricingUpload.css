@@ -1,0 +1,100 @@
+body{
+    /*background-color:#d4d4d4 !important;*/
+}
+
+.rightPanel{
+    background:url(/bgnoise_lg.png);
+    z-index: -1;
+    top:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    border: thin solid #ccc;
+    background-color: #fff;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.submit{
+    background:transparent;
+    border-radius: 0px; 
+    border:2px solid #3885e7;
+    padding:5px;
+    text-align: center;
+    color: #444444;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.submit:hover{
+    background-color: #3885e7 !important;
+    color: #fff;
+}
+
+/***** ACCOUNT *****/
+.loginBackgroundStyle{
+ 	-webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+
+    background-color: #FFF;
+    max-width: 400px;
+ 	padding: 15px;	
+ 	margin: 100px 0 0 0;
+    text-align: center;
+
+}
+
+.account-form .form-control {
+ margin-bottom: 15px;
+ padding-left: 40px;
+ font-size: 16px;
+}
+
+.account-form-text-after {
+ margin-top: 10px;
+ font-size: 14px;
+}
+
+/***** ACCOUNT *****/
+
+.envelopeInside,.lockInside{
+    float: left;
+    margin-left: 10px;
+    margin-top: -45px;
+    position: relative;
+    z-index: 2;
+    color: black;
+    font-size: 20px;
+}
+
+.productCompany {
+    height: 37px !important;
+}
+
+.productCompany ul {
+    padding: 0 8px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    font-size: 15px;
+}
+
+.productCompany ul:after {
+    content: ""; 
+    clear: both; 
+    display: block;
+}
+
+.productCompany ul li {
+    float: left;
+    margin: 0 10px 0 10px;
+}
+
+.productCompany ul li .checkbox {
+    display: block; 
+    padding: 0 15px;
+    color: #fff; 
+    text-decoration: none;
+}

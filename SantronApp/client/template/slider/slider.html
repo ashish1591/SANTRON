@@ -1,0 +1,35 @@
+<template name="slider">
+
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		<div class="titleClick">
+			<span id="appName">{{getApplicationName}}</span>
+		</div>
+		<div id="menu">
+			<div class="panel list-group">
+				{{#if currentUser}}
+					<a href="#" class="list-group-item logout">
+						LOGOUT
+						<span class="fa fa-power-off pull-right"></span>
+					</a>
+				{{/if}}
+
+				{{#each getUniqueProucts}}
+					<a href="#" class="list-group-item mainCategoryBtn" data-toggle="collapse" data-target="#{{keyName}}" data-parent="#menu" style="font-size:18px; font-weight:500;">
+						{{maincategory}}
+						<i class="fa fa-angle-down pull-right"></i>
+					</a>
+					
+					<div id="{{keyName}}" class="sublinks collapse" style="font-family: 'Titillium Web', sans-serif !important;border-bottom:1px solid #ccc;">
+					 	{{#each subcategories}}
+					  		<a class="list-group-item small subCategoryBtn" subcategory="{{this}}" category="{{../maincategory}}">
+					  			<!-- <span class="fa fa-angle-right"></span>  -->
+					  			  {{this}}
+					  		</a>
+					  	{{/each}}
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</nav>
+
+</template>
