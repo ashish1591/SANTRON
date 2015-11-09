@@ -57,5 +57,13 @@ Template.adminPanel.events({
             }
         });
           
+    },
+    'click tbody > tr': function (event,temp) {
+      // var dataTable = $(event.target).closest('table').DataTable();
+      // var rowData = dataTable.row(event.currentTarget).data();
+        var tr = $(event.currentTarget).closest('tr');
+        var table = tr.closest('table').DataTable();
+        var row = table.row(tr);
+        console.log(row);
     }
 })
