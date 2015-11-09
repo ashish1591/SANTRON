@@ -68,3 +68,33 @@ body{
     color: black;
     font-size: 20px;
 }
+
+.productCompany {
+    height: 37px !important;
+}
+
+.productCompany ul {
+    padding: 0 8px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    font-size: 15px;
+}
+
+.productCompany ul:after {
+    content: ""; 
+    clear: both; 
+    display: block;
+}
+
+.productCompany ul li {
+    float: left;
+    margin: 0 10px 0 10px;
+}
+
+.productCompany ul li .checkbox {
+    display: block; 
+    padding: 0 15px;
+    color: #fff; 
+    text-decoration: none;
+}

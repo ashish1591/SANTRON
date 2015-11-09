@@ -11,6 +11,17 @@
 	font-family: 'Raleway', sans-serif;
 }
 
+.logout{
+	padding: 9px 10px 15px 10px!important;
+    font-size:17px; 
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+	font-family: 'Raleway', sans-serif;
+}
+
 .navbarStyle{
     z-index:1;
     line-height: 1.428571429;
@@ -18,9 +29,6 @@
     color:white;
     position :fixed;
     width: 100%;
-    box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
-    -moz-box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
-    -webkit-box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
 }
 
 

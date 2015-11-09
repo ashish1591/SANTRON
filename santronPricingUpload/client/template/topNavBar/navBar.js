@@ -9,6 +9,9 @@ Template.navBar.helpers({
 		return Session.get(TOGGLE_SEARCH_PANEL);
 	},
 
+	isOnPhone:function(){
+		return Meteor.isCordova;
+	},
 })
 
 Template.navBar.events({
@@ -55,6 +58,10 @@ Template.nav.events({
 	'click .searchClick':function(event,template){
 		// $('#overDivCSSWhenSearchOnMobile').fadeIn();
 		Session.set(TOGGLE_SEARCH_PANEL,false);
+	},
+	'click .logout':function(){
+		Meteor.logout();
+		Router.go('/');
 	},
 })
 
