@@ -42,6 +42,9 @@ Template.productDetails.helpers({
         return {companies:companiesList,min:minPrice.productPrice,max:maxPrice.productPrice};
 	},
 	
+	isOnPhone:function(){
+		return Meteor.isCordova;
+	},
 });
 
 Template.productDetails.events({

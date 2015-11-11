@@ -99,40 +99,89 @@ body{
     text-decoration: none;
 }
 
-.boxStyle{
+.productTabCss{
     background-color: #fff;
     -webkit-box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
-    border: thin solid #eee;
-    height: 400px;
-    width:100%;
 }
 
-.productImages{
-    border-bottom:thin solid #eee; 
-    height:40% !important; 
+.boxStyleOnPhone{
+    height: 290px;
+    width:100%;
     cursor: pointer;
+    padding:10px;
+    border-bottom: thin solid #E25D29;
+}
+
+.boxStyleOnDesktop{
+    height: 370px;
+    width:100%;
+    cursor: pointer;
+    padding:10px;
+}
+
+.boxStyleOnDesktop:hover{
+    border: thin solid #E25D29;
+    -webkit-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+       -moz-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+            box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+    padding:10px;
+},
+
+
+.productImagesOnDesktop{
+    height:60% !important; 
     position: relative;
     z-index: 0;
     width: 100% !important;
 }
 
-#sliderMenu{
+.productImgCssOnPhone{
+    height:50% !important; 
+    position: relative;
+    z-index: 0;
+    width: 50% !important;
+}
+
+.productTitle{
+    margin-bottom:5px;
+}
+
+.productDetails{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 25px;     /* fallback */
+   max-height: 75px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.productPrice{
+    border-top: 1px dotted #c9c9c9;
+    border-bottom: 1px dotted #c9c9c9;
+    font-weight: bold;
+    padding: 5px 5px 5px 0;
+    font-size: 18px;
+    color: #D10000;
+}
+
+#showLeft{
     display: none;
 }
 
-#mainMenu,#logoutInDesktop{
+#mainMenu,#logout{
     display: block;
 }
 
 @media screen and (max-width: 1270px){
 
-    #sliderMenu{
+    #showLeft{
         display: block;
     }
 
-    #mainMenu,#logoutInDesktop{
+    #mainMenu,#logout{
         display: none;
     }
 
