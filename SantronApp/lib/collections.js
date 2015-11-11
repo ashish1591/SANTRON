@@ -79,6 +79,18 @@ TabularTables.ItemDetails = new Tabular.Table({
   columns: [
     {data: "title", title: "productTitle"},
     {data: "itemName", title: "itemName"},
-    {data: "productDescription", title: "productDescription"}
+    {data: "productDescription", title: "productDescription"},
+    {data: "itemMainCategory", title: "Category"},
+    {data: "itemName", title: "itemName"},
+    {data: "itemSubCategory", title: "subCategory"},
+    {data: "productPrice", title: "price"},
   ]
 });
+// creationTime       - moment()
+// itemName           - string
+// itemNumber         - string
+// itemMainCategory   - string
+// productDescription - string
+// productTitle       - string
+// productPrice       - number
+// itemSubCategory
