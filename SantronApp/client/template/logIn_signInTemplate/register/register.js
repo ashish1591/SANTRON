@@ -79,7 +79,7 @@ Template.Register.events({
 			{
 				// subscribeAll();
 				
-		      	Router.go('/');
+		      	Router.go('/admin');
 			}
 		});
 		 // return false;
