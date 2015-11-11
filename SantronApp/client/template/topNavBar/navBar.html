@@ -12,24 +12,24 @@
 </template>
 
 <template name="nav">
-    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
-        {{#if isOnPhone}}
+    <div id="sliderMenu" class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+        <!-- {{#if isOnPhone}} -->
             <button id="showLeft" class="btn btn-lg fa fa-bars fa-2x transparentButton"></button>
-        {{/if}}
+        <!-- {{/if}} -->
     </div>
     <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9 navbarTitle" style="
                                                                         {{#if isOnPhone}}text-align : center;{{/if}}">
        {{getApplicationName}}
     </div>
-    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-        {{#if isOnPhone}}
-        {{else}}
+    <div id="logoutInDesktop" class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+       <!--  {{#if isOnPhone}}
+        {{else}} -->
            {{#if currentUser}}
                 <div class="logout">
                     LOGOUT
                 </div>
             {{/if}}
-        {{/if}}
+        <!-- {{/if}} -->
     </div>
 </template>
 

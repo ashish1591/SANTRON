@@ -1,12 +1,8 @@
 Template.productDetails.rendered=function(){
 	// $('#example-getting-started').multiselect();
 	Session.set("SELECTED_BRANDS",'');
-
-
-	
-
-
 };
+
 Template.productDetails.helpers({
 	getAllProducts:function(){
 		var category=Router.current().params.category;
