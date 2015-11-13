@@ -37,6 +37,7 @@ showCurrentStepInfo=function(step) {
     var id = "#" + step;
     $(id).addClass("activeStepInfo");
 }
+
 Template.adminPanel.rendered=function(){
 	resetActive();
 	hideSteps();
