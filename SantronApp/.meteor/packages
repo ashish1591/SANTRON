@@ -22,4 +22,5 @@ netanelgilad:excel
 autopublish
 insecure
 emdagon:bootstrap-multiselect
-aldeed:tabular
+aslagle:reactive-table
+kwk:fibers

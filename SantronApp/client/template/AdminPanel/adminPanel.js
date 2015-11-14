@@ -38,32 +38,66 @@ showCurrentStepInfo=function(step) {
     $(id).addClass("activeStepInfo");
 }
 Template.adminPanel.rendered=function(){
+    Session.set('ISDATALOADING',false);
+
 	resetActive();
-	hideSteps();
-	showCurrentStepInfo();
+    hideSteps();
+    showCurrentStepInfo();
+   
 
 }
 
+Template.adminPanel.helpers({
+    settings: function () {
+        return {
+            collection: Items1,
+            rowsPerPage: 10,
+            showFilter: true,
+            fields: ['productTitle', 'itemName','itemMainCategory','itemSubCategory','productDescription','productPrice']
+        };
+    },
+    dataIsLoading: function(){
+        return Session.get('ISDATALOADING');
+    }
+})
+
 Template.adminPanel.events({
     'click .upload' : function(e){
+        Session.set('ISDATALOADING',true);
         Meteor.call('exceleread', function(err,res){
             if(err)
             {
-              console.log(err.message)
+              console.log(err)
             }   
             else
             {
-                console.log("record inserted succesfully")
+                console.log("record inserted succesfully");
+                Session.set('ISDATALOADING',false);
             }
         });
           
     },
-    'click tbody > tr': function (event,temp) {
-      // var dataTable = $(event.target).closest('table').DataTable();
-      // var rowData = dataTable.row(event.currentTarget).data();
-        var tr = $(event.currentTarget).closest('tr');
-        var table = tr.closest('table').DataTable();
-        var row = table.row(tr);
-        console.log(row);
-    }
+    'click .reactive-table tbody tr': function (event) {
+        // set the blog post we'll display details and news for
+        var post = this;
+        console.log(post);
+        // Session.set('post', post);
+      }
+    // 'change #file-uploader':function(event,temp) {
+    //     var file;
+    //     file = new FS.File(document.getElementById('file-uploader').files[0]);  
+    //     file.userId=Meteor.userId();
+    //     file.createdAt=moment().valueOf();
+    //     console.log(file)
+    //     assetFiles.insert(file,function(err,res){
+    //         if(err){
+    //             console.log("Error");
+    //             console.log(err);
+    //         }else{
+    //             console.log(res);
+    //             Meteor.call('exceleread')
+    //         }
+    //     });
+
+    // }
 })
