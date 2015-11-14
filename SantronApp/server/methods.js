@@ -7,11 +7,31 @@ sleep =function(ms) {
     }, ms);
     Fiber.yield();
 }
+filterRecordByCategory=function(){
+	var allItems=Items1.find().fetch();
+    var uniqueProductList=[]
+    var mainCategory=_.groupBy(allItems,'itemMainCategory')
+    _.each(mainCategory, function(value, key) {
+        if(key){
+            var subcategories=_.groupBy(value,'itemSubCategory')
+
+
+            var filtered_subcategories=[]
+            _.each(subcategories,function(value1,key1){
+            filtered_subcategories.push(key1);
+            })
+            var keyName=key.replace(/\s/g, '');
+            keyName=keyName.replace('&','');
+            uniqueProductList.push({keyName:keyName,maincategory:key,subcategories:filtered_subcategories})
+        }
+    });
+
+}
 Meteor.methods({
    	exceleread : function(){
-   		// Items.find().forEach(function(data){ Items.remove({_id:data._id})})
       	var excel = new Excel('xls');
       	var workbook = excel.readFile('/home/ark/Downloads/Santron Product File.xls');
+      	var yourSheetsName=workbook.SheetNames;
       	var res = excel.utils.sheet_to_json(workbook.Sheets[yourSheetsName[0]]);
       	if(res.length > 0)
     	{
@@ -67,7 +87,11 @@ Meteor.methods({
 		                	}})
 		                }
 		            }
+
 		        }
+		        filterRecordByCategory();
+		        console.log("UPLOAD COMPLETE");
+		        console.log(Items1.find().count());
 				    
 			}).run();
     	}

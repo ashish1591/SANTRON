@@ -12,6 +12,8 @@
 // itemSubCategory    - string
 Items1 = new Ground.Collection('items');
 
+
+uniqueProductList=new Ground.Collection('uniqueproductlist')
 // var imageStore;
 
 // imageStore = new FS.Store.GridFS("assetFiles", {
