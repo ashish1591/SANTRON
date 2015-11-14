@@ -7,12 +7,18 @@
                                                 {{/if}}"
                                                 >
         {{> nav}}
+
+        {{#if isOnHomePage}}
+            {{>mainMenu}}
+        {{/if}}
+
+        {{>productDetailsMenu}}
     </div>
 
 </template>
 
 <template name="nav">
-    <div id="sliderMenu" class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
         <!-- {{#if isOnPhone}} -->
             <button id="showLeft" class="btn btn-lg fa fa-bars fa-2x transparentButton"></button>
         <!-- {{/if}} -->
@@ -21,7 +27,7 @@
                                                                         {{#if isOnPhone}}text-align : center;{{/if}}">
        {{getApplicationName}}
     </div>
-    <div id="logoutInDesktop" class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
        <!--  {{#if isOnPhone}}
         {{else}} -->
            {{#if currentUser}}
@@ -31,6 +37,68 @@
             {{/if}}
         <!-- {{/if}} -->
     </div>
+</template>
+
+<template name="mainMenu">
+    <div id="mainMenu" class="subTopHeaderCss">
+        <nav>
+            <ul>
+                {{#each getUniqueProucts}}
+                <li>
+                    <a href="">
+                        {{maincategory}}
+                        <i class="fa fa-angle-down" style="margin-left:3px;"></i>
+                    </a>
+                    <ul style="display: none;" class="sub_menu">
+                        <div class="col-lg-12 col-md-12">
+                            {{#each subcategories}}
+                                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <a href="" class="subCategoryBtn" subcategory="{{this}}" category="{{../maincategory}}">{{this}}</a>
+                                </li>
+                            {{/each}}
+                        </div>
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+    </div>
+</template>
+
+<template name="productDetailsMenu">
+
+    {{#with getFilterComponents}}
+        <div class="productCompany subTopHeaderCss" style="overflow-x:auto;overflow-y:hidden;">
+            <ul>
+                {{#each companies}}
+                    <li class="">
+                        <input type="checkbox" value="{{this}}" id="{{this}}" class="checkboxList css-checkbox" />
+                        <label for="{{this}}" class="css-label">{{this}}</label>
+                    </li>
+                {{/each}}
+                <!-- <td>
+                    <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" checked="checked"/>
+                    <label for="checkboxG2" class="css-label">Option 2</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" />
+                    <label for="checkboxG3" class="css-label">Option 1</label>
+                </td> -->
+            </ul>
+            <!-- <ul>    
+                {{#each companies}}
+                    <li>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="{{this}}" class="checkboxList" id="filter">
+                            {{this}}
+                          </label>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul> -->
+        </div>
+    {{/with}}
 </template>
 
 <template name="searchPanel">

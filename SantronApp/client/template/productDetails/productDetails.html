@@ -1,43 +1,42 @@
 <template name="productDetails">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="
+    				  {{#if isOnPhone}}
+    				  	margin:0;padding:0;
+    				  {{/if}}">
 
-	{{#with getFilterComponents}}
-		<div class="row productCompany" style="text-align:center;z-index:1;position :fixed;width: 100%;background:#be481a;">
-			<ul>	
-				{{#each companies}}
-					<li>
-						<div class="checkbox">
-						  <label>
-						    <input type="checkbox" value="{{this}}" class="checkboxList" id="filter">
-						    {{this}}
-						  </label>
-						</div>
-					</li>
-				{{/each}}
-			</ul>
-		</div>
-    {{/with}}
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		{{#each getAllProducts}}
-	        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4" style="padding:5px 5px 2.5px 2.5px;">
-	            <div class="boxStyle">
-	            	<div class="productImages">
-	                	<img src="/product.jpg" />
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="
+										        				{{#if isOnPhone}}
+										        					margin:0;padding:0;
+										        				{{else}}
+										        					padding:5px 5px 2.5px 2.5px;
+										        				{{/if}}">
+	            <div class="
+	            		{{#if isOnPhone}}
+	            			boxStyleOnPhone
+	            		{{else}}
+	            			boxStyleOnDesktop
+	            		{{/if}}">
+	            	<div class="
+	            			{{#if isOnPhone}}
+	            				productImgCssOnPhone
+	            			{{else}}
+	            				productImagesOnDesktop
+	            			{{/if}}">
+	                	<img src="/product.jpg" height="100%" width="100%">
 	            	</div>
-	                <h2>{{itemName}}</h2>
-	                <p style="text-align: left;">
-	                    <span class="fa fa-info-circle"></span>
-	                    {{productTitle}}
-	                </p>
-	                <p style="text-align: left;">
-	                    <span class="fa fa-bank "></span>
-	                    {{productDescription}}
-	                </p>
-	                <p style="text-align: left;">
-	                    <span class="fa fa-calendar "></span>
-	                    {{productPrice}}
-	                </p>
-	                <a href="#" class="btn btn-success" title="More">more »</a>
+	            	<div class="productDiscription" style="text-align: left;color:#666;font-size:13px;">
+		                <div class="productTitle">
+		                    {{productTitle}}
+		                	{{itemName}}
+		                </div>
+		                <div class="productPrice">
+		                    <i class="fa fa-inr"></i> {{productPrice}} /-
+		                </div>
+		                <div class="productDetails">
+		                    {{productDescription}}
+		                </div>
+	            	</div>
 	            </div>
 	        </div>
 		{{/each}}

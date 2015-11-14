@@ -1,17 +1,17 @@
 body{
-    /*background-color:#d4d4d4 !important;*/
+    background:url(/bgnoise_lg.png);
 }
 
 .rightPanel{
-    background:url(/bgnoise_lg.png);
     z-index: -1;
-    top:0;
-    overflow-y:auto;
-    overflow-x:hidden;
-    width: 100%;
+    top: 0;
+    border: thin solid #ccc;
+    margin: 0% 15% 0% 15%;
+    width: 70%;
     height: 100%;
     position: fixed;
-    border: thin solid #ccc;
+    overflow-y: auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     background-color: #fff;
 	font-family: 'Titillium Web', sans-serif;
 }
@@ -30,6 +30,15 @@ body{
 .submit:hover{
     background-color: #3885e7 !important;
     color: #fff;
+}
+
+.subTopHeaderCss{
+    text-align:center;
+    z-index:1;
+    position :fixed;
+    width: 100%;
+    background:#be481a;
+    margin-top: 51px;
 }
 
 /***** ACCOUNT *****/
@@ -99,41 +108,129 @@ body{
     text-decoration: none;
 }
 
-.boxStyle{
-    background-color: #fff;
-    -webkit-box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
-    border: thin solid #eee;
-    height: 400px;
+.boxStyleOnPhone{
+    height: 290px;
     width:100%;
+    cursor: pointer;
+    padding:10px;
+    border-bottom: thin solid #E25D29;
 }
 
-.productImages{
-    border-bottom:thin solid #eee; 
-    height:40% !important; 
+.boxStyleOnDesktop{
+    height: 370px;
+    width:100%;
     cursor: pointer;
+    padding:10px;
+}
+
+.boxStyleOnDesktop:hover{
+    border: thin solid #E25D29;
+    -webkit-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+       -moz-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+            box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+    padding:10px;
+},
+
+
+.productImagesOnDesktop{
+    height:60% !important; 
     position: relative;
     z-index: 0;
     width: 100% !important;
 }
 
-#sliderMenu{
+.productImgCssOnPhone{
+    height:50% !important; 
+    position: relative;
+    z-index: 0;
+    width: 50% !important;
+}
+
+.productTitle{
+    margin-bottom:5px;
+}
+
+.productDetails{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 25px;     /* fallback */
+   max-height: 75px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.productPrice{
+    border-top: 1px dotted #c9c9c9;
+    border-bottom: 1px dotted #c9c9c9;
+    font-weight: bold;
+    padding: 5px 5px 5px 0;
+    font-size: 18px;
+    color: #D10000;
+}
+
+#showLeft{
     display: none;
 }
 
-#mainMenu,#logoutInDesktop{
+#mainMenu,#logout{
     display: block;
+}
+
+input[type=checkbox].css-checkbox {
+    position:absolute; 
+    z-index:-1000; 
+    left:-1000px; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0; 
+    border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left:29px;
+    height:17px; 
+    display:inline-block;
+    line-height:17px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:17px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -17px;
+}
+
+label.css-label {
+    background-image:url(/csscheckbox.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @media screen and (max-width: 1270px){
 
-    #sliderMenu{
+    #showLeft{
         display: block;
     }
 
-    #mainMenu,#logoutInDesktop{
+    #mainMenu,#logout{
         display: none;
     }
 
+    .rightPanel{
+        top: 0;
+        width: 100%;
+        border: none;
+        margin: 0;
+    }
 }
+

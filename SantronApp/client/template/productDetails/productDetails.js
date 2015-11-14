@@ -25,34 +25,11 @@ Template.productDetails.helpers({
 		return [];
 	},
 
-	getFilterComponents:function(){
-		var category=Router.current().params.category;
-		var subcategory=Router.current().params.subcategory;
-		subcategory=subcategory.replace('#','/')
-		var items=Items1.find({itemMainCategory:category,itemSubCategory:subcategory}).fetch();
-		var result=_.groupBy(items,'productTitle');
-		var companiesList=[];
-		_.each(result,function(value1,key1){
-        	companiesList.push(key1);
-        })
-
-        var maxPrice=_.max(items, function(items){ return items.productPrice; });
-        var minPrice=_.min(items, function(items){ return items.productPrice; });
-
-        return {companies:companiesList,min:minPrice.productPrice,max:maxPrice.productPrice};
+	isOnPhone:function(){
+		return Meteor.isCordova;
 	},
-	
 });
 
 Template.productDetails.events({
-	'click #filter':function(e,t){
-		Session.set("SELECTED_BRANDS",'');		
-		var selected=[]
-		$('.checkboxList').each(function () {
-           if (this.checked) {
-               selected.push($(this).val()); 
-           }
-		});
-		Session.set("SELECTED_BRANDS",selected);
-	}
+	
 });
