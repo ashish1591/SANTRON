@@ -33,6 +33,20 @@ Router.configure({
 		    }
 		});
 
+		this.route('goToSearchPage_OnMobile', {
+	        path: '/Search/:category/:subcategory',
+	        action: function() 
+	        {
+				this.render('searchPage_OnMobile');
+		    },
+		    data: function () { 
+		      	return {
+		        	category: this.params.category,
+		        	subcategory:this.params.subcategory,
+		      	}
+		    }
+		});
+
 
 	    this.route('productDetails',{
 		    path: "/productDetails/:category/:subcategory",

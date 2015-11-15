@@ -5,14 +5,18 @@
                                                 -moz-box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
                                                 -webkit-box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
                                                 {{/if}}"
-                                                >
-        {{> nav}}
+                                             >
+        {{#if isSearch_OnMobilePage}}
+            {{>searchPanel}}
+        {{else}}                                
+            {{> nav}}
+            {{>productDetailsMenu}}
+        {{/if}}
 
         {{#if isOnHomePage}}
             {{>mainMenu}}
         {{/if}}
 
-        {{>productDetailsMenu}}
     </div>
 
 </template>
@@ -43,14 +47,16 @@
         </div>
     </div>
     <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-       <!--  {{#if isOnPhone}}
-        {{else}} -->
-           {{#if currentUser}}
-                <div class="logout">
-                    LOGOUT
-                </div>
-            {{/if}}
-        <!-- {{/if}} -->
+        {{#if currentUser}}
+            <div class="logout">
+                LOGOUT
+            </div>
+        {{/if}}
+
+        {{#if isOnHomePage}}
+        {{else}}
+            <button id="" class="btn btn-lg fa fa-search fa-2x transparentButton goToSearchPage_OnMobile"></button>
+        {{/if}}
     </div>
 </template>
 
@@ -81,29 +87,30 @@
 </template>
 
 <template name="productDetailsMenu">
-
-    {{#with getFilterComponents}}
-        <div class="productCompany subTopHeaderCss" style="overflow-x:auto;overflow-y:hidden;">
-            <ul>
-                {{#each companies}}
-                    <li class="">
-                        <input type="checkbox" value="{{this}}" id="{{this}}" class="checkboxList css-checkbox" />
-                        <label for="{{this}}" class="css-label">{{this}}</label>
-                    </li>
-                {{/each}}
-            </ul>
-        </div>
-    {{/with}}
+    <div class="subTopHeaderCss">
+        {{#with getFilterComponents}}
+            <div class="productCompany">
+                <ul>
+                    {{#each companies}}
+                        <li class="">
+                            <input type="checkbox" value="{{this}}" id="{{this}}" class="checkboxList css-checkbox" />
+                            <label for="{{this}}" class="css-label">{{this}}</label>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/with}}
+    </div>
 </template>
 
 <template name="searchPanel">
     <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
-        <button type="button" class="btn fa fa-angle-left fa-2x transparentButton backFromSearch" style="float:left;font-size:30px;line-height:30px;"></button>
+        <button type="button" class="btn fa fa-angle-left fa-2x transBack backFromSearch" style="float:left;font-size:30px;line-height:30px;"></button>
     </div>
-    <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
+    <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10 onMobileSearch">
         <input type="text" id="txtSearchBox" name="txtSearchBox" placeholder="Search text" class="form-control" required autofocus>
     </div>
     <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
-        <button type="button" class="transparentButton clearSearchSession" style="float:right;font-size:30px;line-height:30px;">×</button>
+        <button type="button" class="transBack clearSearchSession" style="float:right;font-size:30px;line-height:30px;">×</button>
     </div>
 </template>

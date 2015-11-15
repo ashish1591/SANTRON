@@ -18,6 +18,14 @@ Template.navBar.helpers({
 		}
 		return false;
 	},
+
+	isSearch_OnMobilePage:function(){
+		if(Router.current().path.split("/")[1] === "Search")
+		{
+			return true;
+		}
+		return false;
+	},
 })
 
 Template.navBar.events({
@@ -87,28 +95,31 @@ Template.nav.events({
   		Session.set(SEARCH_TEXT,"");
   		$('#txtSearchBox').val("");
   	},
+
+  	'click .goToSearchPage_OnMobile':function(){
+  		Router.go('goToSearchPage_OnMobile',{category:Router.current().params.category,subcategory:Router.current().params.subcategory});
+  	}
 })
 
 // Template.searchPanel.rendered=function(){
 // 	$('#txtSearchBox').focus();
 // }
 
-// Template.searchPanel.events({
-// 	'keyup #txtSearchBox':function(){
-// 		Session.set(SEARCH_TEXT, $('#txtSearchBox').val() );
-// 	},
+Template.searchPanel.events({
+	'keyup #txtSearchBox':function(){
+		Session.set(SEARCH_TEXT, $('#txtSearchBox').val() );
+	},
 
-// 	'click .clearSearchSession':function(){
-// 		Session.set(SEARCH_TEXT,"");
-// 		$('#txtSearchBox').val("");
-// 	},
+	'click .clearSearchSession':function(){
+		Session.set(SEARCH_TEXT,"");
+		$('#txtSearchBox').val("");
+	},
 
-// 	'click .backFromSearch':function(){
-// 		// $('#overDivCSSWhenSearchOnMobile').fadeOut();
-// 		Session.set(TOGGLE_SEARCH_PANEL,true);
-// 		Session.set(SEARCH_TEXT,"");
-// 	},
-// })
+	'click .backFromSearch':function(){
+		Router.go('productDetails',{category:Router.current().params.category,subcategory:Router.current().params.subcategory});
+		Session.set(SEARCH_TEXT,"");
+	},
+})
 
 Template.mainMenu.rendered=function(){
 	$('nav ul li').hover(

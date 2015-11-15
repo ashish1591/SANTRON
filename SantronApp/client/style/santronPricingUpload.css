@@ -144,7 +144,10 @@ input:focus,input:active,input.active{
 }
 
 .productCompany {
-    height: 37px !important;
+    max-height: 37px !important;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .productCompany ul {
@@ -152,7 +155,7 @@ input:focus,input:active,input.active{
     padding: 0 8px;
     list-style: none;
     position: relative;
-    display: inline-table;
+    display: inline-block;
     font-size: 15px;
 }
 
@@ -239,22 +242,26 @@ label{
     font-size: 15px;
 }
 
-#showLeft{
+.onMobileSearch input{
+    margin-top: 10px;
+}
+
+.transparentButton{
     display: none;
 }
 
-#mainMenu,.logout,.input_group_Search{
+#mainMenu,.logout,.search{
     display: block;
 }
 
 
 @media screen and (max-width: 1270px){
 
-    #showLeft{
+    .transparentButton{
         display: block;
     }
 
-    #mainMenu,.logout,.input_group_Search{
+    #mainMenu,.logout,.search{
         display: none;
     }
 
