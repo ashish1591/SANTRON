@@ -158,7 +158,6 @@ Template.productDetailsMenu.events({
 		var selected=[];
 		$('.checkboxList').each(function () {
            if (this.checked) {
-           		console.log($(this).val());
                selected.push($(this).val()); 
            }
 		});

@@ -78,36 +78,6 @@ body{
     font-size: 20px;
 }
 
-.productCompany {
-    height: 37px !important;
-}
-
-.productCompany ul {
-    padding: 0 8px;
-    list-style: none;
-    position: relative;
-    display: inline-table;
-    font-size: 15px;
-}
-
-.productCompany ul:after {
-    content: ""; 
-    clear: both; 
-    display: block;
-}
-
-.productCompany ul li {
-    float: left;
-    margin: 0 10px 0 10px;
-}
-
-.productCompany ul li .checkbox {
-    display: block; 
-    padding: 0 15px;
-    color: #fff; 
-    text-decoration: none;
-}
-
 .boxStyleOnPhone{
     height: 290px;
     width:100%;
@@ -177,6 +147,37 @@ body{
     display: block;
 }
 
+.productCompany {
+    height: 37px !important;
+}
+
+.productCompany ul {
+    margin-top: 10px;
+    padding: 0 8px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    font-size: 15px;
+}
+
+.productCompany ul:after {
+    content: ""; 
+    clear: both; 
+    display: block;
+}
+
+.productCompany ul li {
+    float: left;
+    margin: 0 10px 0 10px;
+}
+
+.productCompany ul li .checkbox {
+    display: block; 
+    padding: 0 15px;
+    color: #fff; 
+    text-decoration: none;
+}
+
 input[type=checkbox].css-checkbox {
     position:absolute; 
     z-index:-1000; 
@@ -197,7 +198,6 @@ input[type=checkbox].css-checkbox + label.css-label {
     line-height:17px;
     background-repeat:no-repeat;
     background-position: 0 0;
-    font-size:17px;
     vertical-align:middle;
     cursor:pointer;
 }
@@ -214,6 +214,10 @@ label.css-label {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+label{
+    font-weight:normal;
 }
 
 @media screen and (max-width: 1270px){
