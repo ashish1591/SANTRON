@@ -2,6 +2,10 @@ body{
     background:url(/bgnoise_lg.png);
 }
 
+input:focus,input:active,input.active{
+    border-color: #e25d29 !important;
+}
+
 .rightPanel{
     z-index: -1;
     top: 0;
@@ -139,14 +143,6 @@ body{
     color: #D10000;
 }
 
-#showLeft{
-    display: none;
-}
-
-#mainMenu,#logout{
-    display: block;
-}
-
 .productCompany {
     height: 37px !important;
 }
@@ -220,13 +216,45 @@ label{
     font-weight:normal;
 }
 
+.search { 
+    position: relative; 
+}
+
+.search input { 
+    text-indent: 22px;
+}
+
+.search .fa-search { 
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    font-size: 15px;
+    color: #be481a;
+}
+
+.search .fa-times { 
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    font-size: 15px;
+}
+
+#showLeft{
+    display: none;
+}
+
+#mainMenu,.logout,.input_group_Search{
+    display: block;
+}
+
+
 @media screen and (max-width: 1270px){
 
     #showLeft{
         display: block;
     }
 
-    #mainMenu,#logout{
+    #mainMenu,.logout,.input_group_Search{
         display: none;
     }
 

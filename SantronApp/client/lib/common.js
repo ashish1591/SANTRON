@@ -1,4 +1,4 @@
-
+SEARCH_TEXT="SEARCH_TEXT";
 
 toggleNavBar = function(){
 

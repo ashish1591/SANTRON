@@ -25,7 +25,22 @@
     </div>
     <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9 navbarTitle" style="
                                                                         {{#if isOnPhone}}text-align : center;{{/if}}">
-       {{getApplicationName}}
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 titleClick">
+                {{getApplicationName}}
+            </div>
+       
+            <div class="col-md-8 col-sm-12 col-xs-12 col-lg-8">
+                {{#if isOnHomePage}}
+                {{else}}
+                    <div class="search">
+                        <span class="fa fa-search"></span>
+                        <input type="text" class="form-control" id="txtSearchBox" placeholder="Search text"/>
+                        <span class="fa fa-times backTransparent" style="color:#FF2F2F;cursor:pointer;"></span> 
+                    </div>
+                {{/if}}
+            </div>
+        </div>
     </div>
     <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
        <!--  {{#if isOnPhone}}
@@ -77,18 +92,6 @@
                     </li>
                 {{/each}}
             </ul>
-            <!-- <ul>    
-                {{#each companies}}
-                    <li>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" value="{{this}}" class="checkboxList" id="filter">
-                            {{this}}
-                          </label>
-                        </div>
-                    </li>
-                {{/each}}
-            </ul> -->
         </div>
     {{/with}}
 </template>
