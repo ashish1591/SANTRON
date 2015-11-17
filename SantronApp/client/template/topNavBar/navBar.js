@@ -136,7 +136,7 @@ Template.mainMenu.rendered=function(){
 
 Template.mainMenu.helpers({
 	getUniqueProucts: function(){
-        return uniqueProductList.find().fetch();
+        return uniqueProductList.find({},{sort:{maincategory:1}}).fetch();
     },
 })
 
