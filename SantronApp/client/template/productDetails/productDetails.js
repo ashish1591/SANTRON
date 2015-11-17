@@ -58,5 +58,8 @@ Template.productDetails.helpers({
 });
 
 Template.productDetails.events({
-	
+	'click .productDiscription':function(event,template){
+		console.log(this);
+		Router.go('visitSite',{productId:this._id});
+	}
 });

@@ -39,6 +39,8 @@ Template.Register.events({
 		var submit_button = $(t.find(":submit"));
 
 		// var register_name = t.find('#register_name').value.trim();
+		var register_full_name = t.find('#register_full_name').value.trim();
+		var register_phone_no = t.find('#register_phone_no').value.trim();
 		var register_email = t.find('#register_email').value.trim();
 		var register_password = t.find('#register_password').value;
 
@@ -51,6 +53,19 @@ Template.Register.events({
 		// }
 
 		// check email
+		if(!register_full_name)
+		{
+			Session.set("errorMessage", "Please enter name first.");
+			t.find('#register_full_name').focus();
+			return false;			
+		}
+		if(register_phone_no.length<10 || register_phone_no.length===0)
+		{
+			Session.set("errorMessage", "Please enter valid contact number.");
+			t.find('#register_full_name').focus();
+			return false;			
+		}
+
 		if(validateEmail(register_email)===false)
 		{
 			Session.set("errorMessage", "Please enter valid e-mail address.");
@@ -68,7 +83,7 @@ Template.Register.events({
 		}
 
 		// submit_button.button("loading");
-		Accounts.createUser({email: register_email, password : register_password}, function(err) {
+		Accounts.createUser({full_name:register_full_name,phone:register_phone_no,email: register_email, password : register_password}, function(err) {
 			// submit_button.button("reset");
 			if(err)
 			{

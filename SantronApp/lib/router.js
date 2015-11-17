@@ -33,6 +33,19 @@ Router.configure({
 		    }
 		});
 
+		this.route('visitSite', {
+	        path: '/visitSite/:productId',
+	        action: function() 
+	        {
+				this.render('officialSite');
+		    },
+		    data: function () { 
+		      	return {
+		        	productId: this.params.productId
+		      	}
+		    }
+		});
+
 		this.route('goToSearchPage_OnMobile', {
 	        path: '/Search/:category/:subcategory',
 	        action: function() 
