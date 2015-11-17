@@ -22,7 +22,7 @@ Template.slider.helpers({
 		}
 	},
 	getUniqueProucts: function(){
-		return getUniqueProductList();
+		return uniqueProductList.find().fetch();
 	}
 	// userProfilePic:function(){
 	// 	var profileData=Meteor.user();

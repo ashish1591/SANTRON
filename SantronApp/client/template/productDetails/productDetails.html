@@ -1,11 +1,13 @@
 <template name="productDetails">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="
     				  {{#if isOnPhone}}
-    				  	margin:0;padding:0;
+    				  	margin:0;padding:0;width: 70%;
+    				  {{else}}
+    				     width: 70%;margin: 0% 15% 0% 15%;
     				  {{/if}}">
 
 		{{#each getAllProducts}}
-	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 outerDiv" style="
 										        				{{#if isOnPhone}}
 										        					margin:0;padding:0;
 										        				{{else}}

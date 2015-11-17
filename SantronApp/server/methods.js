@@ -9,7 +9,7 @@ sleep =function(ms) {
 }
 filterRecordByCategory=function(){
 	var allItems=Items1.find().fetch();
-    var uniqueProductList=[]
+    // var uniqueProductList=[]
     var mainCategory=_.groupBy(allItems,'itemMainCategory')
     _.each(mainCategory, function(value, key) {
         if(key){
@@ -22,7 +22,15 @@ filterRecordByCategory=function(){
             })
             var keyName=key.replace(/\s/g, '');
             keyName=keyName.replace('&','');
-            uniqueProductList.push({keyName:keyName,maincategory:key,subcategories:filtered_subcategories})
+            var entry={keyName:keyName,maincategory:key,subcategories:filtered_subcategories};
+            uniqueProductList.upsert(entry,{$set:entry},function (err,res){
+            	if(err){
+            		console.log("Error>>>"+err)
+            	}else{
+            		console.log("Success"+res);
+            	}
+            })
+            // uniqueProductList.push({keyName:keyName,maincategory:key,subcategories:filtered_subcategories})
         }
     });
 
@@ -89,6 +97,7 @@ Meteor.methods({
 		            }
 
 		        }
+		        sleep(2000);
 		        filterRecordByCategory();
 		        console.log("UPLOAD COMPLETE");
 		        console.log(Items1.find().count());

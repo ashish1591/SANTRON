@@ -136,7 +136,7 @@ Template.mainMenu.rendered=function(){
 
 Template.mainMenu.helpers({
 	getUniqueProucts: function(){
-        return getUniqueProductList();
+        return uniqueProductList.find().fetch();
     },
 })
 
