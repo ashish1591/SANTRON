@@ -14,9 +14,9 @@
         <div class="cbp-spmenu-push" id="bodyDIV">
             <div class="overDivCSS" id="overDiv"></div>
 
-            <!-- {{#if currentUser}} -->
+            {{#if currentUser}}
                 {{> navBar}}
-            <!-- {{/if}} -->
+            {{/if}}
 
             <div class="rightPanel" style="
                 {{#if currentUser}}
@@ -30,7 +30,12 @@
                     padding: 0px 0px 0px 0px;
                 {{/if}}">
 
-                {{>yield}}                
+                {{#if currentUser}}
+                    {{>yield}}                
+                {{else}}
+                    {{>login_signInTemplate}}
+                {{/if}}
+                
             </div>
         </div>
     </body>

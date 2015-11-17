@@ -23,7 +23,7 @@ input:focus,input:active,input.active{
 .submit{
     background:transparent;
     border-radius: 0px; 
-    border:2px solid #3885e7;
+    border:2px solid #be481a;
     padding:5px;
     text-align: center;
     color: #444444;
@@ -32,7 +32,7 @@ input:focus,input:active,input.active{
 }
 
 .submit:hover{
-    background-color: #3885e7 !important;
+    background-color: #be481a !important;
     color: #fff;
 }
 
@@ -45,18 +45,46 @@ input:focus,input:active,input.active{
     margin-top: 51px;
 }
 
+.loginPageCss{
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    /*background-color: #D1D1D1;*/
+    background-color: #fff;
+}
+
+.appName_loginPageCss{
+    padding: 15px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    color: #fff;
+    height: 30%;
+    width: 100%;
+    background: url("/Orange_Texture.jpg") no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+
 /***** ACCOUNT *****/
+.setLog_Sign_color{
+    margin-bottom: 5px;
+}
+
 .loginBackgroundStyle{
+    padding: 10px;
  	-webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
 
     background-color: #FFF;
-    max-width: 400px;
- 	padding: 15px;	
- 	margin: 100px 0 0 0;
     text-align: center;
-
+    top: 0;
+    z-index: 10;
+    position: absolute;
+    top: 20%;
 }
 
 .account-form .form-control {

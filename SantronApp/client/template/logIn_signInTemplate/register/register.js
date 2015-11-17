@@ -14,12 +14,20 @@ var validateEmail=function(email)
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 };
+
 var isValidPassword=function(register_password, min_password_len)
 {
 	if(register_password.length<min_password_len)
 		return false;
 	else
 		return true;
+}
+
+var isValidNumber=function(number)
+{
+
+	var pattern = /^\d+$/;
+	return pattern.test("3345431");
 }
 
 var getLoggedInUser=function(){
@@ -59,10 +67,10 @@ Template.Register.events({
 			t.find('#register_full_name').focus();
 			return false;			
 		}
-		if(register_phone_no.length<10 || register_phone_no.length===0)
+		if(register_phone_no.length<10 || register_phone_no.length===0 || !isValidNumber(register_phone_no) )
 		{
 			Session.set("errorMessage", "Please enter valid contact number.");
-			t.find('#register_full_name').focus();
+			t.find('#register_phone_no').focus();
 			return false;			
 		}
 
@@ -94,7 +102,7 @@ Template.Register.events({
 			{
 				// subscribeAll();
 				
-		      	Router.go('/admin');
+		      	Router.go('/');
 			}
 		});
 		 // return false;
