@@ -90,14 +90,12 @@
     <div class="subTopHeaderCss">
         {{#with getFilterComponents}}
             <div class="productCompany">
-                <ul>
-                    {{#each companies}}
-                        <li class="">
-                            <input type="checkbox" value="{{this}}" id="{{this}}" class="checkboxList css-checkbox" />
-                            <label for="{{this}}" class="css-label">{{this}}</label>
-                        </li>
-                    {{/each}}
-                </ul>
+                {{#each companies}}
+                    <span>
+                        <input type="checkbox" value="{{this}}" id="{{this}}" class="checkboxList css-checkbox" />
+                        <label for="{{this}}" class="css-label">{{this}}</label>
+                    </span>
+                {{/each}}
             </div>
         {{/with}}
     </div>
