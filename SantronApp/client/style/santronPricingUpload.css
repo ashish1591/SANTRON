@@ -44,10 +44,8 @@ input:focus,input:active,input.active{
 .loginPageCss{
     height: 100%;
     width: 100%;
-    z-index: -1;
-    position: absolute;
-    /*background-color: #D1D1D1;*/
     background-color: #fff;
+    font-family: 'Titillium Web', sans-serif !important;
 }
 
 .appName_loginPageCss{
@@ -55,32 +53,39 @@ input:focus,input:active,input.active{
     text-align: center;
     font-family: 'Raleway', sans-serif;
     font-size: 35px;
-    color: #fff;
-    height: 30%;
-    width: 100%;
-    background: url("/Orange_Texture.jpg") no-repeat;
-    background-size: cover;
-    background-clip: border-box;
+    color: #be481a;
 }
 
 
 /***** ACCOUNT *****/
 .setLog_Sign_color{
-    margin-bottom: 5px;
+    margin-bottom: 50px;
 }
 
 .loginBackgroundStyle{
     padding: 10px;
- 	-webkit-box-shadow: 0 10px 6px -6px #777;
-       -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
+ 	/*-webkit-box-shadow: 0px 3px 14px 0px #777;
+       -moz-box-shadow: 0px 3px 14px 0px #777;
+            box-shadow: 0px 3px 14px 0px #777;*/
 
     background-color: #FFF;
     text-align: center;
-    top: 0;
-    z-index: 10;
-    position: absolute;
-    top: 20%;
+}
+
+.welcomeText{
+    color: #fff;
+    font-family:'BazarMedium';
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.backStyle{
+    /*background: url('/orange-backgrounds-wide.jpg') no-repeat !important;
+    background-size: cover;
+    background-clip: border-box;*/
+    background-color: #CA7200;
+    height: 87%;
+    padding-top: 100px;
 }
 
 .account-form .form-control {
@@ -92,6 +97,10 @@ input:focus,input:active,input.active{
 .account-form-text-after {
  margin-top: 10px;
  font-size: 14px;
+}
+
+#register_form, #forgot_password_form, #login_form{
+    margin-bottom: 30px;
 }
 
 /***** ACCOUNT *****/
@@ -279,6 +288,14 @@ label{
 }
 
 
+@media screen and (max-width: 990px){
+    .backStyle{
+        padding-top: 20px;
+    }
+    .welcomeText{
+        margin-bottom: 20px;
+    }
+}
 @media screen and (max-width: 1270px){
 
     .transparentButton{
