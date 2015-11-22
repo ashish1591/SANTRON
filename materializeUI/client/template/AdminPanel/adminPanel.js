@@ -40,7 +40,7 @@ showCurrentStepInfo=function(step) {
 
 Template.adminPanel.rendered=function(){
     Session.set('ISDATALOADING',false);
-    $(mainMenu).css('display','none');
+    $('#mainMenu').css('display','none');
 	resetActive();
     hideSteps();
     showCurrentStepInfo();

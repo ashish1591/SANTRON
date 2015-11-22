@@ -142,21 +142,21 @@
 		.subTopHeaderCss {
 		  text-align: center;
 		  z-index: 1;
-		  /*position: fixed;*/
 		  width: 100%;
 		  margin-top: -15px;
 		}
 	</style>
     <div id="mainMenu" class="subTopHeaderCss right hide-on-med-and-down">
-        <nav>
+        <!-- <nav>
+        	<div class="nav-wrapper">
             <ul>
                 {{#each getUniqueProucts}}
                 <li>
-                    <a href="">
+                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>
                         {{maincategory}}
-                        <i class="fa fa-angle-down" style="margin-left:3px;"></i>
+                        <i class="fa fa-angle-down"></i>
                     </a>
-                    <ul style="display: none;" class="sub_menu">
+                    <ul id='dropdown1' class='dropdown-content'>
                         <div class="col l12 m12 s12">
                             {{#each subcategories}}
                                 <li class="col l4 m4 s4">
@@ -168,6 +168,33 @@
                 </li>
                 {{/each}}
             </ul>
+    		</div>
+        </nav> -->
+
+        <nav>
+        	<div class="nav-wrapper">
+	            <ul class="right hide-on-med-and-down">
+	                {{#each getUniqueProucts}}
+		                <li>
+		                    <a class='dropdown-button' href='#' data-activates='{{removeNonAlphaNumericChar maincategory}}'>
+		                        {{maincategory}}
+		                        <i class="material-icons right">arrow_drop_down</i>
+		                    </a>
+		                    <ul id='{{removeNonAlphaNumericChar maincategory}}' class='dropdown-content'>
+		                        <div class="col l12 m12 s12">
+		                            {{#each subcategories}}
+		                                <li class="col l4 m6 s8">
+		                                    <a href="" class="subCategoryBtn" subcategory="{{this}}" category="{{../maincategory}}">{{this}}</a>
+		                                </li>
+		                            {{/each}}
+		                        </div>
+		                    </ul>
+		                </li>
+	                {{/each}}
+	            </ul>
+    		</div>
         </nav>
+
+
     </div>
 </template>

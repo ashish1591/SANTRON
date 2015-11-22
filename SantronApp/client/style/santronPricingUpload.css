@@ -8,10 +8,14 @@ input:focus,input:active,input.active{
 
 .rightPanel{
     z-index: -1;
+    top: 0;
+    /*border: thin solid #ccc;*/
+    /*margin: 0% 15% 0% 15%;*/
     width: 100%;
+    height: 100%;
     position: fixed;
     overflow: auto;
-    padding-bottom:50px;
+    /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
     background-color: #fff;
 	font-family: 'Titillium Web', sans-serif;
 }
@@ -44,8 +48,10 @@ input:focus,input:active,input.active{
 .loginPageCss{
     height: 100%;
     width: 100%;
+    z-index: -1;
+    position: absolute;
+    /*background-color: #D1D1D1;*/
     background-color: #fff;
-    font-family: 'Titillium Web', sans-serif !important;
 }
 
 .appName_loginPageCss{
@@ -53,39 +59,32 @@ input:focus,input:active,input.active{
     text-align: center;
     font-family: 'Raleway', sans-serif;
     font-size: 35px;
-    color: #be481a;
+    color: #fff;
+    height: 30%;
+    width: 100%;
+    background: url("/Orange_Texture.jpg") no-repeat;
+    background-size: cover;
+    background-clip: border-box;
 }
 
 
 /***** ACCOUNT *****/
 .setLog_Sign_color{
-    margin-bottom: 50px;
+    margin-bottom: 5px;
 }
 
 .loginBackgroundStyle{
     padding: 10px;
- 	/*-webkit-box-shadow: 0px 3px 14px 0px #777;
-       -moz-box-shadow: 0px 3px 14px 0px #777;
-            box-shadow: 0px 3px 14px 0px #777;*/
+ 	-webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
 
     background-color: #FFF;
     text-align: center;
-}
-
-.welcomeText{
-    color: #fff;
-    font-family:'BazarMedium';
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.backStyle{
-    /*background: url('/orange-backgrounds-wide.jpg') no-repeat !important;
-    background-size: cover;
-    background-clip: border-box;*/
-    background-color: #CA7200;
-    height: 87%;
-    padding-top: 100px;
+    top: 0;
+    z-index: 10;
+    position: absolute;
+    top: 20%;
 }
 
 .account-form .form-control {
@@ -97,10 +96,6 @@ input:focus,input:active,input.active{
 .account-form-text-after {
  margin-top: 10px;
  font-size: 14px;
-}
-
-#register_form, #forgot_password_form, #login_form{
-    margin-bottom: 30px;
 }
 
 /***** ACCOUNT *****/
@@ -132,9 +127,9 @@ input:focus,input:active,input.active{
 
 .boxStyleOnDesktop:hover{
     border: thin solid #E25D29;
-    -webkit-box-shadow: 0px 3px 14px 0px #777;
-       -moz-box-shadow: 0px 3px 14px 0px #777;
-            box-shadow: 0px 3px 14px 0px #777;
+    -webkit-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+       -moz-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+            box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
     padding:10px;
 },
 
@@ -181,11 +176,11 @@ input:focus,input:active,input.active{
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    margin-top: 9px;
-    padding: 0 10px;
 }
 
-/*.productCompany ul {
+.productCompany ul {
+    margin-top: 10px;
+    padding: 0 8px;
     list-style: none;
     position: relative;
     display: inline-block;
@@ -208,7 +203,7 @@ input:focus,input:active,input.active{
     padding: 0 15px;
     color: #fff; 
     text-decoration: none;
-}*/
+}
 
 input[type=checkbox].css-checkbox {
     position:absolute; 
@@ -279,7 +274,7 @@ label{
     margin-top: 10px;
 }
 
-.toggleBtn{
+.transparentButton{
     display: none;
 }
 
@@ -288,17 +283,9 @@ label{
 }
 
 
-@media screen and (max-width: 990px){
-    .backStyle{
-        padding-top: 20px;
-    }
-    .welcomeText{
-        margin-bottom: 20px;
-    }
-}
 @media screen and (max-width: 1270px){
 
-    .toggleBtn{
+    .transparentButton{
         display: block;
     }
 

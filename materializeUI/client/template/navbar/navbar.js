@@ -96,17 +96,34 @@ Template.mainMenu.helpers({
 });
 
 Template.mainMenu.rendered=function(){
-	$('#mainMenu nav ul li').hover(
-        function () {
-            //show its submenu
-            $('ul', this).slideDown(100);
-        }, 
-        function () {
-            //hide its submenu
-            $('ul', this).slideUp(100);         
-        }
-    );
+	// $('#mainMenu nav ul li').hover(
+ //        function () {
+ //            //show its submenu
+ //            $('ul', this).slideDown(100);
+ //        }, 
+ //        function () {
+ //            //hide its submenu
+ //            $('ul', this).slideUp(100);         
+ //        }
+ //    );
+
+ 	$('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'centre' // Displays dropdown with edge aligned to the left of button
+    }
+  );
 }
+Template.mainMenu.helpers({
+	removeNonAlphaNumericChar:function(name){
+		return name.replace(/[^A-Za-z0-9]/g, '');
+	}
+})
+
 Template.mainMenu.events({
 	'click .subCategoryBtn':function(e,t){
 		var category=$(e.currentTarget).attr('category');

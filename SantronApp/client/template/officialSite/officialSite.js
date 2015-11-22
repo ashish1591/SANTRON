@@ -5,9 +5,9 @@ Template.officialSite.rendered=function(){
 Template.officialSite.helpers({
 	getProductLink:function(){
 		var productId=Router.current().params.productId;
-		if(productId && Items1.findOne({_id:productId}).link)
+		if(productId)
 			return Items1.findOne({_id:productId}).link;
-		return "http://localhost:3000"
+		return ""
 	}
 });
 

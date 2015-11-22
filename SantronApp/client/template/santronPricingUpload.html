@@ -22,20 +22,21 @@
                 {{#if currentUser}}
                     {{#if isOnAdminPage}}
                         margin-top:51px !important;
-                    {{else}}       
-                        height:88%;             
-                        margin-top:6.3% !important;
+                    {{else}}                    
+                        margin-top:87px !important;
                     {{/if}}
                     padding-left:0px;
                 {{else}}
                     padding: 0px 0px 0px 0px;
-                    height:100%;
                 {{/if}}">
 
-                {{>yield}}                
+                {{#if currentUser}}
+                    {{>yield}}                
+                {{else}}
+                    {{>login_signInTemplate}}
+                {{/if}}
                 
             </div>
         </div>
-        
     </body>
 </template>

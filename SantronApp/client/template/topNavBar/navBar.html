@@ -1,5 +1,5 @@
 <template name="navBar">
-    <div class="row navbarStyle" id="fixed-top" style="
+    <div class="navbarStyle" id="fixed-top" style="
                                                 {{#if isOnPhone}}
                                                 box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
                                                 -moz-box-shadow: inset 0px 0px #fff, 0 1px 3px rgba(34,25,25,0.4);
@@ -18,73 +18,46 @@
         {{/if}}
 
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="navbar navbar-default">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">TEST NAME</a>
-                </div>
-                <div class="navbar-collapse collapse navbar-responsive-collapse">
-                    <form class="navbar-form navbar-left">
-                        <input type="text" class="form-control col-lg-8" placeholder="Search">
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </template>
 
 <template name="nav">
-<!--     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-        <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1 toggleBtn">
-            <button id="showLeft" class="btn btn-lg fa fa-bars fa-2x transparentButton">HIIIII</button>
-        </div>
-        <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9 navbarTitle" style="{{#if isOnPhone}}text-align : center;{{/if}}">
-            <div class="row">
-                <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 titleClick">
-                    {{getApplicationName}}
-                </div>
-           
-                <div class="col-md-8 col-sm-12 col-xs-12 col-lg-8">
-                    {{#if isOnHomePage}}
-                    {{else}}
-                        <div class="search">
-                            <span class="fa fa-search"></span>
-                            <input type="text" class="form-control" id="txtSearchBox" placeholder="Search text"/>
-                            <span class="fa fa-times backTransparent" style="color:#FF2F2F;cursor:pointer;"></span> 
-                        </div>
-                    {{/if}}
-                </div>
+    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+        <!-- {{#if isOnPhone}} -->
+            <button id="showLeft" class="btn btn-lg fa fa-bars fa-2x transparentButton"></button>
+        <!-- {{/if}} -->
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9 navbarTitle" style="
+                                                                        {{#if isOnPhone}}text-align : center;{{/if}}">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 titleClick">
+                {{getApplicationName}}
+            </div>
+       
+            <div class="col-md-8 col-sm-12 col-xs-12 col-lg-8">
+                {{#if isOnHomePage}}
+                {{else}}
+                    <div class="search">
+                        <span class="fa fa-search"></span>
+                        <input type="text" class="form-control" id="txtSearchBox" placeholder="Search text"/>
+                        <span class="fa fa-times backTransparent" style="color:#FF2F2F;cursor:pointer;"></span> 
+                    </div>
+                {{/if}}
             </div>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 pull-left">
-            {{#if currentUser}}
-                <div class="logout">
-                    LOGOUT
-                </div>
-            {{/if}}
+    </div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+        {{#if currentUser}}
+            <div class="logout">
+                LOGOUT
+            </div>
+        {{/if}}
 
-            {{#if isOnHomePage}}
-            {{else}}
-                <button id="" class="btn btn-lg fa fa-search fa-2x transparentButton goToSearchPage_OnMobile"></button>
-            {{/if}}
-        </div>
-    </div> -->
-
+        {{#if isOnHomePage}}
+        {{else}}
+            <button id="" class="btn btn-lg fa fa-search fa-2x transparentButton goToSearchPage_OnMobile"></button>
+        {{/if}}
+    </div>
 </template>
 
 <template name="mainMenu">
@@ -117,12 +90,14 @@
     <div class="subTopHeaderCss">
         {{#with getFilterComponents}}
             <div class="productCompany">
-                {{#each companies}}
-                    <span>
-                        <input type="checkbox" value="{{this}}" id="{{this}}" class="checkboxList css-checkbox" />
-                        <label for="{{this}}" class="css-label">{{this}}</label>
-                    </span>
-                {{/each}}
+                <ul>
+                    {{#each companies}}
+                        <li class="">
+                            <input type="checkbox" value="{{this}}" id="{{this}}" class="checkboxList css-checkbox" />
+                            <label for="{{this}}" class="css-label">{{this}}</label>
+                        </li>
+                    {{/each}}
+                </ul>
             </div>
         {{/with}}
     </div>
