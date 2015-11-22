@@ -1,0 +1,26 @@
+<template name="login_signInTemplate">
+    <div class="loginPageCss">
+<!--         <div class="appName_loginPageCss">
+            Santron Computers
+        </div> -->
+        <div class="row">
+            <div class="col l6 m6 s10 offset-l3 offset-m3  offset-s1 loginBackgroundStyle">
+                <div class="" style="padding:3%;border: 1px solid;">
+                    {{#if loginTemplate}}
+                        {{> Login}}
+                    {{/if}}
+
+                    {{#if registerTemplate}}
+                        {{> Register}}
+                    {{/if}}
+
+                    {{#if forgotPwTemplate}}
+                        {{> ForgotPassword}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- {{> ResetPassword}} -->
+</template>

@@ -1,0 +1,117 @@
+<template name="productDetails">
+	<style>
+
+	.boxStyle{
+		{{#if isOnPhone}}
+		    height: 290px;
+		    width:100%;
+		    cursor: pointer;
+		    padding:10px;
+		    border-bottom: thin solid #E25D29;
+	    {{else}}
+	    	height: 370px;
+		    width:100%;
+		    cursor: pointer;
+		    padding:10px;
+		    border: thin solid #E25D29;
+		{{/if}}
+	},
+	.boxStyleOnDesktop:hover{
+		{{#if isOnPhone}}
+		{{else}}
+		    border: thin solid #E25D29;
+		    -webkit-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+		       -moz-box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+		            box-shadow: -1px 5px 29px -9px rgba(0,0,0,0.75);
+		    padding:10px;
+		{{/if}}
+	}
+	.productImage{
+		{{#if isOnPhone}}
+			height:50% !important; 
+		    position: relative;
+		    z-index: 0;
+		    width: 50% !important;
+		{{else}}
+		    height:60% !important; 
+		    position: relative;
+		    z-index: 0;
+		    width: 100% !important;
+		{{/if}}
+	}
+	.outerDiv{
+		{{#if isOnPhone}}
+		{{else}}
+			width: 74% !important;
+	    	margin: 0% 13% 0% 13% !important;
+	    {{/if}}
+	}
+	</style>
+<!--     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="
+    				  {{#if isOnPhone}}
+    				  	margin:0;padding:0;width: 70%;
+    				  {{else}}
+    				     width: 70%;margin: 0% 15% 0% 15%;
+    				  {{/if}}">
+
+		{{#each getAllProducts}}
+	        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="
+										        				{{#if isOnPhone}}
+										        					margin:0;padding:0;
+										        				{{else}}
+										        					padding:5px 5px 2.5px 2.5px;
+										        				{{/if}}">
+	            <div class="
+	            		{{#if isOnPhone}}
+	            			boxStyleOnPhone
+	            		{{else}}
+	            			boxStyleOnDesktop
+	            		{{/if}}">
+	            	<div class="
+	            			{{#if isOnPhone}}
+	            				productImgCssOnPhone
+	            			{{else}}
+	            				productImagesOnDesktop
+	            			{{/if}}">
+	                	<img src="/product.jpg" height="100%" width="100%">
+	            	</div>
+	            	<div class="productDiscription" style="text-align: left;color:#666;font-size:13px;">
+		                <div class="productTitle">
+		                    {{productTitle}}
+		                	{{itemName}} {{itemNumber}}
+		                </div>
+		                <div class="productPrice">
+		                    <i class="fa fa-inr"></i> {{productPrice}} /-
+		                </div>
+		                <div class="productDetails">
+		                    {{productDescription}}
+		                </div>
+	            	</div>
+	            </div>
+	        </div>
+		{{/each}}
+    </div> -->
+    <div class="row mainOuterDiv">
+	    <div class="col l12 m12 s12 outerDiv">
+	    	{{#each getAllProducts}}
+		    	<div class="col l3 m6 s12 boxStyle">
+		    		<div class="productImage">
+	                	<img src="/product.jpg" height="100%" width="100%">
+	            	</div>
+	            	<div class="productDiscription" style="text-align: left;color:#666;font-size:13px;">
+		                <div class="productTitle">
+		                    {{productTitle}}
+		                	{{itemName}} {{itemNumber}}
+		                </div>
+		                <div class="productPrice">
+		                    <i class="fa fa-inr"></i> {{productPrice}} /-
+		                </div>
+		                <div class="productDetails">
+		                    {{productDescription}}
+		                </div>
+	            	</div>
+		    	</div> 
+		    {{/each}}   	
+	    </div>
+    </div>
+</template>

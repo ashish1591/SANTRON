@@ -270,7 +270,7 @@ label{
     margin-top: 10px;
 }
 
-.transparentButton{
+.toggleBtn{
     display: none;
 }
 
@@ -281,7 +281,7 @@ label{
 
 @media screen and (max-width: 1270px){
 
-    .transparentButton{
+    .toggleBtn{
         display: block;
     }
 
