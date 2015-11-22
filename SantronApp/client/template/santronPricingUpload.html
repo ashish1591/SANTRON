@@ -32,11 +32,7 @@
                     height:100%;
                 {{/if}}">
 
-                {{#if currentUser}}
-                    {{>yield}}                
-                {{else}}
-                    {{>login_signInTemplate}}
-                {{/if}}
+                {{>yield}}                
                 
             </div>
         </div>

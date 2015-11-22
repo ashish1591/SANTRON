@@ -1,8 +1,16 @@
 
-Router.onBeforeAction(function(){
-},
-{except: ['login_signInTemplate'] });
+// Router.onBeforeAction(function(){
+// },
+// {except: ['login_signInTemplate'] });
 
+
+var mustBeSignedIn = function() {
+    if (!(Meteor.user() || Meteor.loggingIn())) {
+        Router.go('login_signInTemplate');
+    }
+};
+
+Router.onBeforeAction(mustBeSignedIn, {except: ['login_signInTemplate']});
 
 Router.configure({
 	// we use the   template to define the layout for the entire app
@@ -25,7 +33,15 @@ Router.configure({
 		    }
 		});
 		
- 		this.route('/admin', {
+ 		this.route('login_signInTemplate', {
+	        path: '/login_signInTemplate',
+	        action: function() 
+	        {
+				this.render('login_signInTemplate');
+		    }
+		});
+
+		this.route('/admin', {
 	        path: '/admin',
 	        action: function() 
 	        {
